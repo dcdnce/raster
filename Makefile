@@ -1,5 +1,7 @@
 SRCS	=	srcs/main.cpp \
 			srcs/utils.cpp \
+			srcs/Raster.cpp \
+
 
 OBJS	=	$(SRCS:.cpp=.o)
 
