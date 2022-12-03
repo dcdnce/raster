@@ -3,10 +3,10 @@
 
 #include <algorithm>
 
-void	Raster::drawWireframeTriangle(Vector2 p1, Vector2 p2, Vector2 p3) {
-	DrawLineV(p1, p2, BLACK);
-	DrawLineV(p2, p3, BLACK);
-	DrawLineV(p3, p1, BLACK);
+void	Raster::drawWireframeTriangle(Vector2 p1, Vector2 p2, Vector2 p3, Color color) {
+	DrawLineV(p1, p2, color);
+	DrawLineV(p2, p3, color);
+	DrawLineV(p3, p1, color);
 }
 
 void	Raster::drawTriangle(Vector2 p1, Vector2 p2, Vector2 p3, Color color) {
