@@ -29,7 +29,7 @@ Raster::Model::Model(const char* filename){
 			Vector3 v;
 			isLine >> trash;
 			isLine >> v.x >> v.y >> v.z;
-			v.y = -v.y;
+			//v.y = -v.y;
 			this->_vertices.push_back(v);
 		}
 		else if (!sLine.compare(0, 2, "f ")) {

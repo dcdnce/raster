@@ -7,8 +7,8 @@
 
 #include "raylib.h"
 
-#define SCREEN_WIDTH	500
-#define SCREEN_HEIGHT	500
+#define SCREEN_WIDTH	600
+#define SCREEN_HEIGHT	600
 
 // UTILS_CPP
 float lerp(const float lo, const float hi, const float t);

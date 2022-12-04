@@ -2,6 +2,7 @@
 #include <string>
 #include <sstream>
 #include <iterator>
+#include <cstdlib>
 
 #include "raylib.h"
 #include "main.hpp"
@@ -21,18 +22,33 @@ int main(void)
 	{
 		BeginDrawing();
 			ClearBackground(BLACK);
+			
+			/*
 			float	w_half = SCREEN_WIDTH / 2.;
 			float	h_half = SCREEN_HEIGHT / 2.;
 			for (int i = 0; i < model.nFaces(); i++) { 
-				std::vector<int> f = model.getFace(i); 
+				std::vector<int> 		f = model.getFace(i); 
+				std::vector<Vector2>	p(3); 
 				for (int j = 0; j < 3; j++) { 
-					Vector3 v0 = model.getVertice(f[j]); 
-					Vector3 v1 = model.getVertice(f[(j+1)%3]); 
-					Vector2	a = (Vector2){(v0.x+1.)*w_half, (v0.y+1.)*h_half};
-					Vector2	b = (Vector2){(v1.x+1.)*w_half, (v1.y+1.)*h_half};
-					DrawLineV(a, b, RAYWHITE);
+					Vector3 v = model.getVertice(f[j]); 
+					p[j].x = (v.x+1.)*w_half;
+					p[j].y = (v.y+1.)*h_half;
 				} 
+				//Raster::drawWireframeTriangle(p[0], p[1], p[2], (Color){255, 255, 255, 255});
+				Raster::drawTriangle(p[0], p[1], p[2], (Color){255, 255, 255, 255});
 			}
+		*/	
+			
+			
+			Raster::drawTriangle((Vector2){10, 10},	\
+					(Vector2){250, 100}, \
+					(Vector2){150, 250}, \
+					RAYWHITE);
+			Raster::drawTriangle((Vector2){100, 400},	\
+					(Vector2){50, 300}, \
+					(Vector2){350, 350}, \
+					RAYWHITE);
+			
 		EndDrawing();
     }
 
