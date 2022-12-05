@@ -6,7 +6,7 @@
 /*   By: pforesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 19:24:05 by pforesti          #+#    #+#             */
-/*   Updated: 2022/12/03 20:10:04 by pforesti         ###   ########.fr       */
+/*   Updated: 2022/12/05 16:23:53 by pforesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Raster::Model::Model(const char* filename){
 			Vector3 v;
 			isLine >> trash;
 			isLine >> v.x >> v.y >> v.z;
-			//v.y = -v.y;
+			v.y = -v.y;
 			this->_vertices.push_back(v);
 		}
 		else if (!sLine.compare(0, 2, "f ")) {

@@ -23,7 +23,6 @@ int main(void)
 		BeginDrawing();
 			ClearBackground(BLACK);
 			
-			/*
 			float	w_half = SCREEN_WIDTH / 2.;
 			float	h_half = SCREEN_HEIGHT / 2.;
 			for (int i = 0; i < model.nFaces(); i++) { 
@@ -34,21 +33,10 @@ int main(void)
 					p[j].x = (v.x+1.)*w_half;
 					p[j].y = (v.y+1.)*h_half;
 				} 
+				Color c = (Color){static_cast<unsigned char>(rand()%255), static_cast<unsigned char>(rand()%255), static_cast<unsigned char>(rand()%255), 255};
 				//Raster::drawWireframeTriangle(p[0], p[1], p[2], (Color){255, 255, 255, 255});
-				Raster::drawTriangle(p[0], p[1], p[2], (Color){255, 255, 255, 255});
+				Raster::drawTriangle(p[0], p[1], p[2], c);
 			}
-		*/	
-			
-			
-			Raster::drawTriangle((Vector2){10, 10},	\
-					(Vector2){250, 100}, \
-					(Vector2){150, 250}, \
-					RAYWHITE);
-			Raster::drawTriangle((Vector2){100, 400},	\
-					(Vector2){50, 300}, \
-					(Vector2){350, 350}, \
-					RAYWHITE);
-			
 		EndDrawing();
     }
 
