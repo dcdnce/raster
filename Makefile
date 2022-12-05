@@ -11,7 +11,7 @@ CXX	=	c++
 OS	:=	$(shell uname)
 
 # Compiler flags (+ where to find headers)
-CXXFLAGS	=	-Wall -Wextra -std=c++11
+CXXFLAGS	=	-Wall -Wextra -std=c++11 -Wno-missing-field-initializers 
 CXXFLAGS	+=	-Iincludes -I/usr/local/include
 
 # Linking flags(+ where to find libs)
