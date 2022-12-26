@@ -44,11 +44,11 @@ int main(void)
 				Vector3	n = Vector3Multiply(B, A);
 				n = Vector3Normalize(n);
 				float I = Vector3DotProduct(n,light_dir);
-				if (I <= 0) continue;
+				if (I < 0) continue;
 
 				Color c = (Color){(unsigned char)(I*255.), (unsigned char)(I*255.), (unsigned char)(I*255.), 255};
-				//Raster::drawWireframeTriangle(p[0], p[1], p[2], (Color){255, 255, 255, 255});
-				Raster::drawTriangle(screen_p[0], screen_p[1], screen_p[2], c);
+				//Raster::drawTriangle(screen_p[0], screen_p[1], screen_p[2], c);
+				Raster::drawWireframeTriangle(screen_p[0], screen_p[1], screen_p[2], (Color){255, 0, 0, 255});
 			}
 		EndDrawing();
     }
