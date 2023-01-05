@@ -39,7 +39,8 @@ Raster::Model::Model(const char* filename){
 			isLine >> trash;
 			for (int i = 0 ; i < 3 ; i++) {
 				isLine >> id >> trash >> itrash >> trash >> itrash;
-				f.push_back(--id);
+				id--;
+				f.push_back(id);
 			}
 			this->_faces.push_back(f);
 		}
