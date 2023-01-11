@@ -29,7 +29,8 @@ int main(void)
 			float	w_half = SCREEN_WIDTH / 2.;
 			float	h_half = SCREEN_HEIGHT / 2.;
 
-			Vector3	light_dir = {1, 0, -1};
+			Vector3	light_dir = {1, 0, 0};
+			Vector3	view_dir = {0, 0, 1};
 			for (int i = 0; i < model.nFaces(); i++) { 
 				std::vector<int> 		f = model.getFace(i); 
 				Vector2	screen_p[3]; 
@@ -40,11 +41,8 @@ int main(void)
 					screen_p[j].y = (world_p[j].y+1.)*h_half;
 				} 
 
-				Vector3	n = Vector3Multiply( \
-					Vector3Subtract(world_p[2], world_p[0]), \
-					Vector3Subtract(world_p[1], world_p[0]));
+				Vector3	n = Vector3CrossProduct(Vector3Subtract(world_p[2], world_p[0]), Vector3Subtract(world_p[1], world_p[0]));
 				n = Vector3Normalize(n);
-				light_dir = Vector3Normalize(light_dir);
 				float intensity = Vector3DotProduct(n,light_dir);
 				if (intensity <= 0) continue;
 
